@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbWebPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TblMailList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TblMailList1" Relationship="Self.FK_TblMailList_TblMailList" FromRole="TblMailList" ToRole="TblMailList1" />
+    <NavigationProperty Name="TblMailList2" Relationship="Self.FK_TblMailList_TblMailList" FromRole="TblMailList1" ToRole="TblMailList" />
+  </EntityType>
+  <Association Name="FK_TblMailList_TblMailList">
+    <End Role="TblMailList" Type="Self.TblMailList" Multiplicity="1" />
+    <End Role="TblMailList1" Type="Self.TblMailList" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TblMailList">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TblMailList1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbWebPortalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblMailList" EntityType="Self.TblMailList" />
+    <AssociationSet Name="FK_TblMailList_TblMailList" Association="Self.FK_TblMailList_TblMailList">
+      <End Role="TblMailList" EntitySet="TblMailList" />
+      <End Role="TblMailList1" EntitySet="TblMailList" />
+    </AssociationSet>
+    <EntitySet Name="TblOpeningHours" EntityType="DbWebPortalModel.TblOpeningHours" />
+    <EntitySet Name="VWOpeningHours" EntityType="DbWebPortalModel.VWOpeningHours" />
+    <EntitySet Name="TblDoctors" EntityType="DbWebPortalModel.TblDoctors" />
+    <EntitySet Name="TblApointment" EntityType="DbWebPortalModel.TblApointment" />
+    <EntitySet Name="TblBlog" EntityType="DbWebPortalModel.TblBlog" />
+    <EntitySet Name="TblApiUsers" EntityType="DbWebPortalModel.TblApiUsers" />
+    <EntitySet Name="VwDoctorsApointment" EntityType="DbWebPortalModel.VwDoctorsApointment" />
+    <EntitySet Name="TblDoctorInfo" EntityType="DbWebPortalModel.TblDoctorInfo" />
+  </EntityContainer>
+  <EntityType Name="TblOpeningHours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DayOfWeek" Type="Int32" />
+    <Property Name="StartHour" Type="Time" Precision="5" />
+    <Property Name="EndHour" Type="Time" Precision="5" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="VWOpeningHours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DayOfWeek" Type="Int32" />
+    <Property Name="StartHour" Type="Time" Precision="5" />
+    <Property Name="EndHour" Type="Time" Precision="5" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="DayName" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblDoctors">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+    </Key>
+    <Property Name="DoctorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TblApointment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ApointmentDate" Type="DateTime" Precision="0" />
+    <Property Name="DoctorId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TblBlog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SmallDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BlogLink" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblApiUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DoctorId" Type="Int32" />
+    <Property Name="ApiKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecretKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="VwDoctorsApointment">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="DoctorId" Type="Int32" Nullable="false" />
+    <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="PatienNameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ApointmentDate" Type="DateTime" Precision="0" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblDoctorInfo">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Name="DoctorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DoctorNameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorDegree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorImage" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

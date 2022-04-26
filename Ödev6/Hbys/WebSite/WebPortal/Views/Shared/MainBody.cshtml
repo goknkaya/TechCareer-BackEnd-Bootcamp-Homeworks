@@ -1,0 +1,54 @@
+﻿<div class="section-2">
+    <div class="container-fluid">
+        <div class="row slide">
+            <div class="col-xl-4 triple-sec p-5">
+                <h5 class="text-wh font-weight-bold">We have something to be proud of</h5>
+                <ul class="list-unstyled mt-4">
+                    <li class="style-bottom-w3">
+                        <h4 class="text-wh font-weight-bold">6250</h4>
+                        <p class="text-li">Happy Patients</p>
+                    </li>
+                    <li class="style-bottom-w3 mt-3">
+                        <h4 class="text-wh font-weight-bold">48</h4>
+                        <p class="text-li">Years of experience</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-4 triple-sec p-5">
+                <h5 class="text-wh font-weight-bold">Opening Hours</h5>
+                <ul class="list-unstyled text-wh mt-4">
+
+                    @{
+
+                        //Application["TblOpeningHours"] = BusinessLayer.GetOpeningHours(out OMessage);
+
+                        List<PortalDataLayer.VWOpeningHours> OpeningHours = (List<PortalDataLayer.VWOpeningHours>)HttpContext.Current.Application["TblOpeningHours"];
+
+                        if (OpeningHours != null)
+                        {
+                            if (OpeningHours.Count > 0)
+                            {
+                                foreach (var OpeningHour in OpeningHours)
+                                {
+                                    <li class="clearfix py-1">
+                                        <span class="float-left"> @OpeningHour.DayName </span>
+                                        <div class="value float-right"> @OpeningHour.StartHour.Value.ToString() - @OpeningHour.EndHour.Value.ToString() </div>
+                                    </li>
+                                }
+                            }
+                        }
+
+                    }
+
+
+
+                </ul>
+            </div>
+            <div class="col-xl-4 triple-sec p-5 text-center">
+                <p class="text-uppercase text-li mt-xl-5 mt-4 pt-xl-2">Lorem ut</p>
+                <h4 class="down-list-w3 text-wh font-weight-bold mt-1 mb-4">Download Now</h4>
+                <a href="#" class="some-small-btn bg-wh btn text-bl font-weight-bold mb-xl-0 mb-4">Check It</a>
+            </div>
+        </div>
+    </div>
+</div>

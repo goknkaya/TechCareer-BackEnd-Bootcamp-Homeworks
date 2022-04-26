@@ -1,0 +1,6 @@
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\Patient\bin\Debug\Patient.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\Patient\bin\Debug\Patient.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\Patient\obj\Debug\Patient.csproj.AssemblyReference.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\Patient\obj\Debug\Patient.csproj.CoreCompileInputs.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\Patient\obj\Debug\Patient.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\Patient\obj\Debug\Patient.pdb

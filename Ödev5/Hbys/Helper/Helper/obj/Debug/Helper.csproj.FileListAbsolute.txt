@@ -1,0 +1,6 @@
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Helper\Helper\bin\Debug\Helper.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Helper\Helper\bin\Debug\Helper.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Helper\Helper\obj\Debug\Helper.csproj.AssemblyReference.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Helper\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Helper\Helper\obj\Debug\Helper.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Helper\Helper\obj\Debug\Helper.pdb

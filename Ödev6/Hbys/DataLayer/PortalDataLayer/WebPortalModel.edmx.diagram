@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a71ab01856a4373855683425b62e688" Name="Diagram1">
+        <EntityTypeShape EntityType="DbWebPortalModel.TblMailList" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="false" />
+        <AssociationConnector Association="DbWebPortalModel.FK_TblMailList_TblMailList" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbWebPortalModel.TblOpeningHours" Width="1.5" PointX="2.125" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="DbWebPortalModel.VWOpeningHours" Width="1.5" PointX="3.75" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="DbWebPortalModel.TblDoctors" Width="1.5" PointX="5.375" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="DbWebPortalModel.TblApointment" Width="1.5" PointX="0.5" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="DbWebPortalModel.TblBlog" Width="1.5" PointX="2.125" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="DbWebPortalModel.TblApiUsers" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="DbWebPortalModel.VwDoctorsApointment" Width="1.5" PointX="5.375" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="DbWebPortalModel.TblDoctorInfo" Width="2" PointX="0.75" PointY="2.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

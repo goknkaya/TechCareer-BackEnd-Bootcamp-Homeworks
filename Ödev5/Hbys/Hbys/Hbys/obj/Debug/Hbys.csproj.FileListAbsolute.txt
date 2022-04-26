@@ -1,0 +1,36 @@
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\Hbys.exe.config
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\Hbys.exe
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\Hbys.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\Helper.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\Patient.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\User.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\Helper.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\Patient.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\bin\Debug\User.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.AssemblyReference.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.SuggestedBindingRedirects.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.FrmLogin.resources
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.Properties.Resources.resources
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.GenerateResource.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.CoreCompileInputs.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.CopyComplete
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.exe
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\Hbys\Hbys\obj\Debug\Hbys.pdb
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\Hbys.exe.config
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\Hbys.exe
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\Hbys.pdb
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\Helper.dll
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\Patient.dll
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\User.dll
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\Helper.pdb
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\Patient.pdb
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\bin\Debug\User.pdb
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.AssemblyReference.cache
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.SuggestedBindingRedirects.cache
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.FrmLogin.resources
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.Properties.Resources.resources
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.GenerateResource.cache
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.CoreCompileInputs.cache
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.csproj.CopyComplete
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.exe
+D:\Visual Studio 2022 Project\Hbys\Hbys\Hbys\obj\Debug\Hbys.pdb

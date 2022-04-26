@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DbWebPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblApiUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="DoctorId" Type="int" />
+          <Property Name="ApiKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="SecretKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblApointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="ApointmentDate" Type="date" />
+          <Property Name="DoctorId" Type="int" />
+        </EntityType>
+        <EntityType Name="TblBlog">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BlogTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="SmallDescription" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="text" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="200" />
+          <Property Name="BlogLink" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblDoctorInfo">
+          <Key>
+            <PropertyRef Name="DoctorID" />
+          </Key>
+          <Property Name="DoctorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DoctorNameSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="DoctorDegree" Type="nvarchar" MaxLength="50" />
+          <Property Name="DoctorImage" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TblDoctors">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+          </Key>
+          <Property Name="DoctorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblMailList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblOpeningHours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DayOfWeek" Type="int" />
+          <Property Name="StartHour" Type="time" Precision="5" />
+          <Property Name="EndHour" Type="time" Precision="5" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbWebPortal.dbo.VwDoctorsApointment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwDoctorsApointment">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="DoctorId" Type="int" Nullable="false" />
+          <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="PatienNameSurname" Type="nvarchar" MaxLength="100" />
+          <Property Name="ApointmentDate" Type="date" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbWebPortal.dbo.VWOpeningHours' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VWOpeningHours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DayOfWeek" Type="int" />
+          <Property Name="StartHour" Type="time" Precision="5" />
+          <Property Name="EndHour" Type="time" Precision="5" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="DayName" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <Association Name="FK_TblMailList_TblMailList">
+          <End Role="TblMailList" Type="Self.TblMailList" Multiplicity="1" />
+          <End Role="TblMailList1" Type="Self.TblMailList" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TblMailList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TblMailList1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbWebPortalModelStoreContainer">
+          <EntitySet Name="TblApiUsers" EntityType="Self.TblApiUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblApointment" EntityType="Self.TblApointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblBlog" EntityType="Self.TblBlog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDoctorInfo" EntityType="Self.TblDoctorInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDoctors" EntityType="Self.TblDoctors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMailList" EntityType="Self.TblMailList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblOpeningHours" EntityType="Self.TblOpeningHours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VwDoctorsApointment" EntityType="Self.VwDoctorsApointment" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwDoctorsApointment].[DoctorId] AS [DoctorId], 
+    [VwDoctorsApointment].[NameSurname] AS [NameSurname], 
+    [VwDoctorsApointment].[Active] AS [Active], 
+    [VwDoctorsApointment].[PatienNameSurname] AS [PatienNameSurname], 
+    [VwDoctorsApointment].[ApointmentDate] AS [ApointmentDate], 
+    [VwDoctorsApointment].[Email] AS [Email], 
+    [VwDoctorsApointment].[Id] AS [Id], 
+    [VwDoctorsApointment].[PhoneNumber] AS [PhoneNumber]
+    FROM [dbo].[VwDoctorsApointment] AS [VwDoctorsApointment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VWOpeningHours" EntityType="Self.VWOpeningHours" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VWOpeningHours].[Id] AS [Id], 
+    [VWOpeningHours].[DayOfWeek] AS [DayOfWeek], 
+    [VWOpeningHours].[StartHour] AS [StartHour], 
+    [VWOpeningHours].[EndHour] AS [EndHour], 
+    [VWOpeningHours].[Active] AS [Active], 
+    [VWOpeningHours].[DayName] AS [DayName]
+    FROM [dbo].[VWOpeningHours] AS [VWOpeningHours]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_TblMailList_TblMailList" Association="Self.FK_TblMailList_TblMailList">
+            <End Role="TblMailList" EntitySet="TblMailList" />
+            <End Role="TblMailList1" EntitySet="TblMailList" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbWebPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblMailList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblMailList1" Relationship="Self.FK_TblMailList_TblMailList" FromRole="TblMailList" ToRole="TblMailList1" />
+          <NavigationProperty Name="TblMailList2" Relationship="Self.FK_TblMailList_TblMailList" FromRole="TblMailList1" ToRole="TblMailList" />
+        </EntityType>
+        <Association Name="FK_TblMailList_TblMailList">
+          <End Role="TblMailList" Type="Self.TblMailList" Multiplicity="1" />
+          <End Role="TblMailList1" Type="Self.TblMailList" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TblMailList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TblMailList1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbWebPortalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblMailList" EntityType="Self.TblMailList" />
+          <AssociationSet Name="FK_TblMailList_TblMailList" Association="Self.FK_TblMailList_TblMailList">
+            <End Role="TblMailList" EntitySet="TblMailList" />
+            <End Role="TblMailList1" EntitySet="TblMailList" />
+          </AssociationSet>
+          <EntitySet Name="TblOpeningHours" EntityType="DbWebPortalModel.TblOpeningHours" />
+          <EntitySet Name="VWOpeningHours" EntityType="DbWebPortalModel.VWOpeningHours" />
+          <EntitySet Name="TblDoctors" EntityType="DbWebPortalModel.TblDoctors" />
+          <EntitySet Name="TblApointment" EntityType="DbWebPortalModel.TblApointment" />
+          <EntitySet Name="TblBlog" EntityType="DbWebPortalModel.TblBlog" />
+          <EntitySet Name="TblApiUsers" EntityType="DbWebPortalModel.TblApiUsers" />
+          <EntitySet Name="VwDoctorsApointment" EntityType="DbWebPortalModel.VwDoctorsApointment" />
+          <EntitySet Name="TblDoctorInfo" EntityType="DbWebPortalModel.TblDoctorInfo" />
+        </EntityContainer>
+        <EntityType Name="TblOpeningHours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DayOfWeek" Type="Int32" />
+          <Property Name="StartHour" Type="Time" Precision="5" />
+          <Property Name="EndHour" Type="Time" Precision="5" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="VWOpeningHours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DayOfWeek" Type="Int32" />
+          <Property Name="StartHour" Type="Time" Precision="5" />
+          <Property Name="EndHour" Type="Time" Precision="5" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="DayName" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblDoctors">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+          </Key>
+          <Property Name="DoctorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblApointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ApointmentDate" Type="DateTime" Precision="0" />
+          <Property Name="DoctorId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblBlog">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BlogTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SmallDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BlogLink" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblApiUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorId" Type="Int32" />
+          <Property Name="ApiKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SecretKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="VwDoctorsApointment">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="DoctorId" Type="Int32" Nullable="false" />
+          <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="PatienNameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ApointmentDate" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblDoctorInfo">
+          <Key>
+            <PropertyRef Name="DoctorID" />
+          </Key>
+          <Property Name="DoctorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorNameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DoctorDegree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DoctorImage" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbWebPortalModelStoreContainer" CdmEntityContainer="DbWebPortalEntities">
+          <EntitySetMapping Name="TblMailList">
+            <EntityTypeMapping TypeName="DbWebPortalModel.TblMailList">
+              <MappingFragment StoreEntitySet="TblMailList">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblOpeningHours">
+            <EntityTypeMapping TypeName="DbWebPortalModel.TblOpeningHours">
+              <MappingFragment StoreEntitySet="TblOpeningHours">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EndHour" ColumnName="EndHour" />
+                <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+                <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VWOpeningHours">
+            <EntityTypeMapping TypeName="DbWebPortalModel.VWOpeningHours">
+              <MappingFragment StoreEntitySet="VWOpeningHours">
+                <ScalarProperty Name="DayName" ColumnName="DayName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="EndHour" ColumnName="EndHour" />
+                <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+                <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDoctors">
+            <EntityTypeMapping TypeName="DbWebPortalModel.TblDoctors">
+              <MappingFragment StoreEntitySet="TblDoctors">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblApointment">
+            <EntityTypeMapping TypeName="DbWebPortalModel.TblApointment">
+              <MappingFragment StoreEntitySet="TblApointment">
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="ApointmentDate" ColumnName="ApointmentDate" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblBlog">
+            <EntityTypeMapping TypeName="DbWebPortalModel.TblBlog">
+              <MappingFragment StoreEntitySet="TblBlog">
+                <ScalarProperty Name="BlogLink" ColumnName="BlogLink" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SmallDescription" ColumnName="SmallDescription" />
+                <ScalarProperty Name="BlogTitle" ColumnName="BlogTitle" />
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblApiUsers">
+            <EntityTypeMapping TypeName="DbWebPortalModel.TblApiUsers">
+              <MappingFragment StoreEntitySet="TblApiUsers">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+                <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwDoctorsApointment">
+            <EntityTypeMapping TypeName="DbWebPortalModel.VwDoctorsApointment">
+              <MappingFragment StoreEntitySet="VwDoctorsApointment">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ApointmentDate" ColumnName="ApointmentDate" />
+                <ScalarProperty Name="PatienNameSurname" ColumnName="PatienNameSurname" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDoctorInfo">
+            <EntityTypeMapping TypeName="DbWebPortalModel.TblDoctorInfo">
+              <MappingFragment StoreEntitySet="TblDoctorInfo">
+                <ScalarProperty Name="DoctorImage" ColumnName="DoctorImage" />
+                <ScalarProperty Name="DoctorDegree" ColumnName="DoctorDegree" />
+                <ScalarProperty Name="DoctorNameSurname" ColumnName="DoctorNameSurname" />
+                <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

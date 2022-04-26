@@ -1,0 +1,69 @@
+﻿@{
+
+    List<PortalDataLayer.TblBlog> Blogs = new List<PortalDataLayer.TblBlog>();
+
+    if (ViewBag.BlogList != null)
+    {
+        Blogs = (List<PortalDataLayer.TblBlog>)ViewBag.BlogList;
+    }
+
+}
+
+<section class="blog_w3ls py-5" id="blog">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="title-section mb-md-5 mb-4">
+            <h6 class="w3ls-title-sub">Latest Posts</h6>
+            <h3 class="w3ls-title text-uppercase text-bl font-weight-bold">Bloglarımız</h3>
+        </div>
+        <div class="row">
+
+
+            @{
+                int Count = 1;
+
+                foreach (PortalDataLayer.TblBlog Blog in Blogs)
+                {
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                        <div class="card border-0 med-blog">
+                            <div class="card-body border border-bottom-0 pb-5">
+                                <div class="mb-3">
+                                    <h5 class="blog-title card-title font-weight-bold m-0">
+                                        <a href="~/Blog?@Blog.BlogLink">@Blog.BlogTitle</a>
+                                    </h5>
+                                    <div class="blog_w3icon">
+                                        <span>
+                                            @Blog.SmallDescription
+                                        </span>
+                                    </div>
+                                </div>
+                                <p class="mb-4">@Blog.Description</p>
+                                <a href="~/Blog?@Blog.BlogLink" class="blog-btn btn">Oku</a>
+                            </div>
+                            <div class="card-header p-0">
+                                <a href="~/Blog?@Blog.BlogLink">
+                                    <img class="card-img-bottom" src="@Blog.ImagePath" alt="image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    if (Count % 3 == 0)
+                    {
+                        <div class="clearfix"><p><br /><br /></p></div>
+                    }
+
+                    Count++;
+                }
+
+            }
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</section>

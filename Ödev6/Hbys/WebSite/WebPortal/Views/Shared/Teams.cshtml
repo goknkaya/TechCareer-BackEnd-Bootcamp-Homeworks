@@ -1,0 +1,40 @@
+﻿@{//ÖDEVDE EKLENDİ
+    List<PortalDataLayer.TblDoctorInfo> DoctorInfos = new List<PortalDataLayer.TblDoctorInfo>();
+
+    if (ViewBag.DoctorInfoList != null)
+    {
+        DoctorInfos = ViewBag.DoctorInfoList;
+    }
+}
+<div class="team pb-5" id="team">
+    <div class="container pb-xl-5 pb-lg-3">
+        <h1 class="kbd text-center mb-4">Doktorlarımız</h1>
+        <div class="row mt-30">
+            <div class="mb-4">
+                <h3 class="w3ls-title text-bl font-weight-bold">
+                    En iyi doktorlarımızla tanışın. Doktorlarımız her zaman yardım için hazır...
+                </h3>
+            </div>
+            @{//ÖDEVDE EKLENDİ
+                foreach (PortalDataLayer.TblDoctorInfo DoctorInfo in DoctorInfos)
+                {
+                    <div class="mb-4 col-lg-6 col-sm-6">
+
+                        <div class="box16">
+                            <img src="@DoctorInfo.DoctorImage" alt="" class="img-fluid">
+                            <div class="box-content">
+                                <h2 class="title">@DoctorInfo.DoctorNameSurname</h2>
+                                <h3 class="title">@DoctorInfo.DoctorDegree</h3>
+                                <ul class="social">
+                                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

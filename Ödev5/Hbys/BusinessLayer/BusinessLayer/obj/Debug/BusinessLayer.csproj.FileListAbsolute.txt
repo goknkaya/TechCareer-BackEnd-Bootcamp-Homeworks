@@ -1,0 +1,25 @@
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\bin\Debug\PortalDataLayer.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\bin\Debug\PortalDataLayer.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\bin\Debug\PortalDataLayer.dll.config
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\bin\Debug\Helper.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\BusinessLayer\BusinessLayer\bin\Debug\Helper.pdb
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\bin\Debug\Helper.dll
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\bin\Debug\PortalDataLayer.dll
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\bin\Debug\PortalDataLayer.pdb
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\bin\Debug\PortalDataLayer.dll.config
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\bin\Debug\Helper.pdb
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\Visual Studio 2022 Project\Hbys\BusinessLayer\BusinessLayer\obj\Debug\BusinessLayer.pdb

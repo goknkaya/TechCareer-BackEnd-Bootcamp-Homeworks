@@ -1,0 +1,14 @@
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\bin\Debug\ClientTestProject.exe.config
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\bin\Debug\ClientTestProject.exe
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\bin\Debug\ClientTestProject.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.csproj.AssemblyReference.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.Form1.resources
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.Properties.Resources.resources
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.csproj.GenerateResource.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.csproj.CoreCompileInputs.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.csproj.CopyComplete
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.exe
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\WebService\ClientTestProject\ClientTestProject\obj\Debug\ClientTestProject.pdb

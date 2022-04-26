@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbWebPortalModelStoreContainer" CdmEntityContainer="DbWebPortalEntities">
+    <EntitySetMapping Name="TblMailList">
+      <EntityTypeMapping TypeName="DbWebPortalModel.TblMailList">
+        <MappingFragment StoreEntitySet="TblMailList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblOpeningHours">
+      <EntityTypeMapping TypeName="DbWebPortalModel.TblOpeningHours">
+        <MappingFragment StoreEntitySet="TblOpeningHours">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EndHour" ColumnName="EndHour" />
+          <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VWOpeningHours">
+      <EntityTypeMapping TypeName="DbWebPortalModel.VWOpeningHours">
+        <MappingFragment StoreEntitySet="VWOpeningHours">
+          <ScalarProperty Name="DayName" ColumnName="DayName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EndHour" ColumnName="EndHour" />
+          <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDoctors">
+      <EntityTypeMapping TypeName="DbWebPortalModel.TblDoctors">
+        <MappingFragment StoreEntitySet="TblDoctors">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblApointment">
+      <EntityTypeMapping TypeName="DbWebPortalModel.TblApointment">
+        <MappingFragment StoreEntitySet="TblApointment">
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="ApointmentDate" ColumnName="ApointmentDate" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBlog">
+      <EntityTypeMapping TypeName="DbWebPortalModel.TblBlog">
+        <MappingFragment StoreEntitySet="TblBlog">
+          <ScalarProperty Name="BlogLink" ColumnName="BlogLink" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SmallDescription" ColumnName="SmallDescription" />
+          <ScalarProperty Name="BlogTitle" ColumnName="BlogTitle" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblApiUsers">
+      <EntityTypeMapping TypeName="DbWebPortalModel.TblApiUsers">
+        <MappingFragment StoreEntitySet="TblApiUsers">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+          <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VwDoctorsApointment">
+      <EntityTypeMapping TypeName="DbWebPortalModel.VwDoctorsApointment">
+        <MappingFragment StoreEntitySet="VwDoctorsApointment">
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ApointmentDate" ColumnName="ApointmentDate" />
+          <ScalarProperty Name="PatienNameSurname" ColumnName="PatienNameSurname" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDoctorInfo">
+      <EntityTypeMapping TypeName="DbWebPortalModel.TblDoctorInfo">
+        <MappingFragment StoreEntitySet="TblDoctorInfo">
+          <ScalarProperty Name="DoctorImage" ColumnName="DoctorImage" />
+          <ScalarProperty Name="DoctorDegree" ColumnName="DoctorDegree" />
+          <ScalarProperty Name="DoctorNameSurname" ColumnName="DoctorNameSurname" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

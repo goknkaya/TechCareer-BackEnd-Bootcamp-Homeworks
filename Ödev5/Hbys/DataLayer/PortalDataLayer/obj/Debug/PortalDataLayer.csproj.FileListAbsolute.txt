@@ -1,0 +1,24 @@
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\bin\Debug\PortalDataLayer.dll.config
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\bin\Debug\PortalDataLayer.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\bin\Debug\PortalDataLayer.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\bin\Debug\EntityFramework.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\bin\Debug\EntityFramework.xml
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.csproj.AssemblyReference.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.csproj.CoreCompileInputs.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.csproj.CopyComplete
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.pdb
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\bin\Debug\PortalDataLayer.dll.config
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\bin\Debug\PortalDataLayer.dll
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\bin\Debug\PortalDataLayer.pdb
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\bin\Debug\EntityFramework.dll
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\bin\Debug\EntityFramework.xml
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.csproj.AssemblyReference.cache
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.csproj.CoreCompileInputs.cache
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.csproj.CopyComplete
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.dll
+D:\Visual Studio 2022 Project\Hbys\DataLayer\PortalDataLayer\obj\Debug\PortalDataLayer.pdb

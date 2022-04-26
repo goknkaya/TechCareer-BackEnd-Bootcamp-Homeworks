@@ -1,0 +1,6 @@
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\User\User\bin\Debug\User.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\User\User\bin\Debug\User.pdb
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\User\User\obj\Debug\User.csproj.AssemblyReference.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\User\User\obj\Debug\User.csproj.CoreCompileInputs.cache
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\User\User\obj\Debug\User.dll
+C:\Users\tunc.gulec\Desktop\BootCamp\Hbys\NTier\Business\User\User\obj\Debug\User.pdb

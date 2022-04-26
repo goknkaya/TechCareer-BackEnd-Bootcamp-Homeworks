@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbWebPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TblApiUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="DoctorId" Type="int" />
+    <Property Name="ApiKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecretKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblApointment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="ApointmentDate" Type="date" />
+    <Property Name="DoctorId" Type="int" />
+  </EntityType>
+  <EntityType Name="TblBlog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlogTitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="SmallDescription" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="text" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="200" />
+    <Property Name="BlogLink" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblDoctorInfo">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Name="DoctorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DoctorNameSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="DoctorDegree" Type="nvarchar" MaxLength="50" />
+    <Property Name="DoctorImage" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="TblDoctors">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+    </Key>
+    <Property Name="DoctorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblMailList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblOpeningHours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DayOfWeek" Type="int" />
+    <Property Name="StartHour" Type="time" Precision="5" />
+    <Property Name="EndHour" Type="time" Precision="5" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DbWebPortal.dbo.VwDoctorsApointment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VwDoctorsApointment">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="DoctorId" Type="int" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="PatienNameSurname" Type="nvarchar" MaxLength="100" />
+    <Property Name="ApointmentDate" Type="date" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DbWebPortal.dbo.VWOpeningHours' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VWOpeningHours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DayOfWeek" Type="int" />
+    <Property Name="StartHour" Type="time" Precision="5" />
+    <Property Name="EndHour" Type="time" Precision="5" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="DayName" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <Association Name="FK_TblMailList_TblMailList">
+    <End Role="TblMailList" Type="Self.TblMailList" Multiplicity="1" />
+    <End Role="TblMailList1" Type="Self.TblMailList" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TblMailList">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TblMailList1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbWebPortalModelStoreContainer">
+    <EntitySet Name="TblApiUsers" EntityType="Self.TblApiUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblApointment" EntityType="Self.TblApointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblBlog" EntityType="Self.TblBlog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblDoctorInfo" EntityType="Self.TblDoctorInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblDoctors" EntityType="Self.TblDoctors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMailList" EntityType="Self.TblMailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblOpeningHours" EntityType="Self.TblOpeningHours" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VwDoctorsApointment" EntityType="Self.VwDoctorsApointment" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VwDoctorsApointment].[DoctorId] AS [DoctorId], 
+    [VwDoctorsApointment].[NameSurname] AS [NameSurname], 
+    [VwDoctorsApointment].[Active] AS [Active], 
+    [VwDoctorsApointment].[PatienNameSurname] AS [PatienNameSurname], 
+    [VwDoctorsApointment].[ApointmentDate] AS [ApointmentDate], 
+    [VwDoctorsApointment].[Email] AS [Email], 
+    [VwDoctorsApointment].[Id] AS [Id], 
+    [VwDoctorsApointment].[PhoneNumber] AS [PhoneNumber]
+    FROM [dbo].[VwDoctorsApointment] AS [VwDoctorsApointment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VWOpeningHours" EntityType="Self.VWOpeningHours" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VWOpeningHours].[Id] AS [Id], 
+    [VWOpeningHours].[DayOfWeek] AS [DayOfWeek], 
+    [VWOpeningHours].[StartHour] AS [StartHour], 
+    [VWOpeningHours].[EndHour] AS [EndHour], 
+    [VWOpeningHours].[Active] AS [Active], 
+    [VWOpeningHours].[DayName] AS [DayName]
+    FROM [dbo].[VWOpeningHours] AS [VWOpeningHours]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_TblMailList_TblMailList" Association="Self.FK_TblMailList_TblMailList">
+      <End Role="TblMailList" EntitySet="TblMailList" />
+      <End Role="TblMailList1" EntitySet="TblMailList" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

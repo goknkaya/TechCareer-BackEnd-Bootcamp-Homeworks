@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetNow">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecretKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTokenResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorsApointments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecretKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoctorsApointmentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoctorsApointmentsResult" type="tns:ArrayOfVwDoctorsApointment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVwDoctorsApointment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VwDoctorsApointment" nillable="true" type="tns:VwDoctorsApointment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VwDoctorsApointment">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DoctorId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameSurname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PatienNameSurname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApointmentDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetNowSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNow" />
+  </wsdl:message>
+  <wsdl:message name="GetNowSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNowResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetToken" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorsApointmentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoctorsApointments" />
+  </wsdl:message>
+  <wsdl:message name="GetDoctorsApointmentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoctorsApointmentsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TokenSoap">
+    <wsdl:operation name="GetNow">
+      <wsdl:input message="tns:GetNowSoapIn" />
+      <wsdl:output message="tns:GetNowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToken">
+      <wsdl:input message="tns:GetTokenSoapIn" />
+      <wsdl:output message="tns:GetTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsApointments">
+      <wsdl:input message="tns:GetDoctorsApointmentsSoapIn" />
+      <wsdl:output message="tns:GetDoctorsApointmentsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TokenSoap" type="tns:TokenSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNow">
+      <soap:operation soapAction="http://tempuri.org/GetNow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToken">
+      <soap:operation soapAction="http://tempuri.org/GetToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsApointments">
+      <soap:operation soapAction="http://tempuri.org/GetDoctorsApointments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TokenSoap12" type="tns:TokenSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNow">
+      <soap12:operation soapAction="http://tempuri.org/GetNow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToken">
+      <soap12:operation soapAction="http://tempuri.org/GetToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorsApointments">
+      <soap12:operation soapAction="http://tempuri.org/GetDoctorsApointments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Token">
+    <wsdl:port name="TokenSoap" binding="tns:TokenSoap">
+      <soap:address location="https://localhost:44345/Token.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TokenSoap12" binding="tns:TokenSoap12">
+      <soap12:address location="https://localhost:44345/Token.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
