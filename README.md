@@ -6,12 +6,12 @@ TechCareer' in düzenlemiş olduğu Back-End Bootcamp' te Tunç Hocamızın ders
 
 <a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev1">1. Ödev: True / False Mantık Sorusu</a>
 
-<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev2/HomeworkTabControlLogin">1. Ödev: True / False Mantık Sorusu</a>
+<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev2/HomeworkTabControlLogin">2. Ödev: Tab Control ile Login Ekranı</a>
 
-<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev3">1. Ödev: True / False Mantık Sorusu</a>
+<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev3">3. Ödev: İleri Seviye Hesap Makinesi</a>
 
-<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev4/HomeworkChessBoard">1. Ödev: True / False Mantık Sorusu</a>
+<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev4/HomeworkChessBoard">4. Ödev: OOP ile Satranç Tahtası</a>
 
-<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev5/Hbys">1. Ödev: True / False Mantık Sorusu</a>
+<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev5/Hbys">5. Ödev: Hastane Sitesi Login Sayfası</a>
 
-<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev6">1. Ödev: True / False Mantık Sorusu</a>
+<a href="https://github.com/goknkaya/TechCareer-BackEnd-Bootcamp-Homeworks/tree/main/%C3%96dev6">6. Ödev: Hastane Sitesi Veritabanından Doktor Çekme</a>
